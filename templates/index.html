@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🌾 CropYield AI - Home</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <h1>🌾 HarvestIQ</h1>
+    <div>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('predictor_page') }}">Predictor</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h2>Driving Agritech Innovation with AI</h2>
+    <p>
+      Our AI-powered platform equips stakeholders with actionable insights by analyzing crop types, seasonal trends, and regional data—empowering sustainable agriculture and smarter decisions.
+    </p>
+    <a href="{{ url_for('predictor_page') }}">Start Prediction</a>
+  </section>
+</body>
+</html>

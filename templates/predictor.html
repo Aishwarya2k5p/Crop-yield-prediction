@@ -1,0 +1,322 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crop Yield Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <nav>
+    <div class="logo">🌾 CropYield AI</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('predictor_page') }}">Predictor</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>🌱 Enter Crop Details</h2>
+    <form id="predictionForm">
+      <label>Crop:</label>
+      <select name="Crop" required>
+        <option value="">Select a Crop</option>
+        <option>Arecanut</option>
+        <option>Arhar/Tur</option>
+        <option>Bajra</option>
+        <option>Banana</option>
+        <option>Barley</option>
+        <option>Black pepper</option>
+        <option>Cardamom</option>
+        <option>Cashewnut</option>
+        <option>Castor seed</option>
+        <option>Coconut</option>
+        <option>Coriander</option>
+        <option>Cotton(lint)</option>
+        <option>Cowpea(Lobia)</option>
+        <option>Dry chillies</option>
+        <option>Garlic</option>
+        <option>Ginger</option>
+        <option>Gram</option>
+        <option>Groundnut</option>
+        <option>Guar seed</option>
+        <option>Horse-gram</option>
+        <option>Jowar</option>
+        <option>Jute</option>
+        <option>Khesari</option>
+        <option>Linseed</option>
+        <option>Maize</option>
+        <option>Masoor</option>
+        <option>Mesta</option>
+        <option>Moong(Green Gram)</option>
+        <option>Moth</option>
+        <option>Niger seed</option>
+        <option>Oilseeds total</option>
+        <option>Onion</option>
+        <option>Other  Rabi pulses</option>
+        <option>Other Cereals</option>
+        <option>Other Kharif pulses</option>
+        <option>Other Summer Pulses</option>
+        <option>Peas & beans (Pulses)</option>
+        <option>Potato</option>
+        <option>Ragi</option>
+        <option>Rapeseed &Mustard</option>
+        <option>Rice</option>
+        <option>Safflower</option>
+        <option>Sannhamp</option>
+        <option>Sesamum</option>
+        <option>Small millets</option>
+        <option>Soyabean</option>
+        <option>Sugarcane</option>
+        <option>Sunflower</option>
+        <option>Sweet potato</option>
+        <option>Tapioca</option>
+        <option>Tobacco</option>
+        <option>Turmeric</option>
+        <option>Urad</option>
+        <option>Wheat</option>
+        <option>other oilseeds</option>
+      </select>
+
+      <label>Season:</label>
+      <select name="Season" required>
+        <option value="">Select Season</option>
+        <option>Autumn</option>
+        <option>Kharif</option>
+        <option>Rabi</option>
+        <option>Summer</option>
+        <option>Whole Year</option>
+        <option>Winter</option>
+      </select>
+
+      <label>State:</label>
+      <select name="State" required>
+        <option value="">Select State</option>
+        <option>Andhra Pradesh</option>
+        <option>Arunachal Pradesh</option>
+        <option>Assam</option>
+        <option>Bihar</option>
+        <option>Chhattisgarh</option>
+        <option>Delhi</option>
+        <option>Goa</option>
+        <option>Gujarat</option>
+        <option>Haryana</option>
+        <option>Himachal Pradesh</option>
+        <option>Jammu and Kashmir</option>
+        <option>Jharkhand</option>
+        <option>Karnataka</option>
+        <option>Kerala</option>
+        <option>Madhya Pradesh</option>
+        <option>Maharashtra</option>
+        <option>Manipur</option>
+        <option>Meghalaya</option>
+        <option>Mizoram</option>
+        <option>Nagaland</option>
+        <option>Odisha</option>
+        <option>Puducherry</option>
+        <option>Punjab</option>
+        <option>Sikkim</option>
+        <option>Tamil Nadu</option>
+        <option>Telangana</option>
+        <option>Tripura</option>
+        <option>Uttar Pradesh</option>
+        <option>Uttarakhand</option>
+        <option>West Bengal</option>
+      </select>
+
+      <label>Area (hectares):</label>
+      <input type="number" name="Area" step="0.01" required />
+
+      <label>Annual Rainfall (mm):</label>
+      <input type="number" name="Annual_Rainfall" step="0.01" required />
+
+      <label>Fertilizer (kg):</label>
+      <input type="number" name="Fertilizer" step="0.01" required />
+
+      <label>Pesticide (kg):</label>
+      <input type="number" name="Pesticide" step="0.01" required />
+
+      <label>Crop Year:</label>
+      <input type="number" name="Crop_Year" required />
+
+      <button type="submit">Predict Yield</button>
+    </form>
+    <h3 id="result"></h3>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crop Yield Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav>
+    <div class="logo">🌾 HarvestIQ</div>
+    <ul>
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('predictor_page') }}">Predictor</a></li>
+    </ul>
+  </nav>
+
+  <div class="container glass">
+    <h2>🌱 Enter Crop Details</h2>
+    <form id="predictionForm">
+      <div class="form-grid">
+        <div class="field">
+          <label><i class="fas fa-leaf"></i> Crop:</label>
+          <select name="Crop" required>
+            <option value="">Select a Crop</option>
+            <option>Arecanut</option>
+            <option>Arhar/Tur</option>
+            <option>Bajra</option>
+            <option>Banana</option>
+            <option>Barley</option>
+            <option>Black pepper</option>
+            <option>Cardamom</option>
+            <option>Cashewnut</option>
+            <option>Castor seed</option>
+            <option>Coconut</option>
+            <option>Coriander</option>
+            <option>Cotton(lint)</option>
+            <option>Cowpea(Lobia)</option>
+            <option>Dry chillies</option>
+            <option>Garlic</option>
+            <option>Ginger</option>
+            <option>Gram</option>
+            <option>Groundnut</option>
+            <option>Guar seed</option>
+            <option>Horse-gram</option>
+            <option>Jowar</option>
+            <option>Jute</option>
+            <option>Khesari</option>
+            <option>Linseed</option>
+            <option>Maize</option>
+            <option>Masoor</option>
+            <option>Mesta</option>
+            <option>Moong(Green Gram)</option>
+            <option>Moth</option>
+            <option>Niger seed</option>
+            <option>Oilseeds total</option>
+            <option>Onion</option>
+            <option>Other  Rabi pulses</option>
+            <option>Other Cereals</option>
+            <option>Other Kharif pulses</option>
+            <option>Other Summer Pulses</option>
+            <option>Peas & beans (Pulses)</option>
+            <option>Potato</option>
+            <option>Ragi</option>
+            <option>Rapeseed &Mustard</option>
+            <option>Rice</option>
+            <option>Safflower</option>
+            <option>Sannhamp</option>
+            <option>Sesamum</option>
+            <option>Small millets</option>
+            <option>Soyabean</option>
+            <option>Sugarcane</option>
+            <option>Sunflower</option>
+            <option>Sweet potato</option>
+            <option>Tapioca</option>
+            <option>Tobacco</option>
+            <option>Turmeric</option>
+            <option>Urad</option>
+            <option>Wheat</option>
+            <option>other oilseeds</option>
+          </select>
+    
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-cloud-sun"></i> Season:</label>
+          <select name="Season" required>
+            <option value="">Select Season</option>
+            <option>Autumn</option>
+            <option>Kharif</option>
+            <option>Rabi</option>
+            <option>Summer</option>
+            <option>Whole Year</option>
+            <option>Winter</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-map-marker-alt"></i> State:</label>
+          <select name="State" required>
+            <option value="">Select State</option>
+            <option>Andhra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Delhi</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jammu and Kashmir</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madhya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Odisha</option>
+            <option>Puducherry</option>
+            <option>Punjab</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telangana</option>
+            <option>Tripura</option>
+            <option>Uttar Pradesh</option>
+            <option>Uttarakhand</option>
+            <option>West Bengal</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-ruler-combined"></i> Area (ha):</label>
+          <input type="number" name="Area" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-tint"></i> Rainfall (mm):</label>
+          <input type="number" name="Annual_Rainfall" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-seedling"></i> Fertilizer (kg):</label>
+          <input type="number" name="Fertilizer" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-bug"></i> Pesticide (kg):</label>
+          <input type="number" name="Pesticide" step="0.01" required />
+        </div>
+
+        <div class="field">
+          <label><i class="fas fa-calendar-alt"></i> Crop Year:</label>
+          <input type="number" name="Crop_Year" required />
+        </div>
+      </div>
+
+      <button type="submit">🚜 Predict Yield</button>
+    </form>
+    <h3 id="result"></h3>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
