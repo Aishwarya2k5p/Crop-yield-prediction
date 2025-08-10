@@ -52,6 +52,13 @@ visualization.ipynb  # Jupyter notebook for data analysis and visualization
    ```
    python final_train.py
    ```
+**Model Evaluation Results:**
+```
+Mean Absolute Error (MAE): 0.22 (Low prediction error)
+Mean Squared Error (MSE): 0.18 (Stable and minimal large errors)
+Root Mean Squared Error (RMSE): 0.42 (Indicates consistency in predictions)
+R-squared (R²): 0.86 (86% variance explained, strong model fit)
+```
 
 ## Dataset
 The project uses `crop_yield.csv` containing historical crop and environmental data for model training and prediction.
